@@ -38,3 +38,99 @@
     }
   }
 }
+
+// Menu overlay
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+  }
+  
+  &-branding, 
+  &-nav { // === .menu-branding, .menu-brand
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    float: left;  // maybe float and width looks a bit outdated?
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  // Nav side
+  &-nav {
+    margin: 0;
+    padding: 0;
+    background-color: darken($primary-color, 5);  // another SASS function
+    list-style: none;
+    @include easeOut;
+    transform: translate(0, -100%);  // slide in from top
+
+    &.show {
+      transform: translate(0, 0);
+    }
+  }
+
+  // Branding side
+  &-branding {
+    background-color: $primary-color;
+    @include easeOut;
+    transform: translate(0, 100%);  // slide in from bottom
+
+    &.show {
+      transform: translate(0, 0);
+    }
+
+    .portrait {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      border: solid 3px $secondary-color;
+      background-image: $portrait-image;
+    }
+  }
+
+  // Navbar links
+  .nav-item {
+    @include easeOut;
+    transform: translate(600px, 0);
+
+    &.show {
+      transform: translate(0, 0);
+    }
+
+    &.current > a {
+      color: $secondary-color;
+    }
+  }
+
+  .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+    color: white;
+    text-decoration: none;
+    @include easeOut;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+// Delay each nav item slide by 0.1s
+@for $x from 1 through 4 {
+  .nav-item:nth-child(#{$x}) {  // variable usage #{...}
+    transition-delay: $x * 0.1s;
+  }
+}

@@ -66,9 +66,14 @@ Then you include it in your main file:
 ## Highlights
 
 - Creating a hamburger button
+- Two sections of the navbar sliding in from top and bottom
+  (Why use float on this though?)
 
 
 ## Other notes
 
 If you happen to see any error that makes no actual sense under NPM watch,
 try restarting the service and save your files again
+
+Ideas
+- Blur background image of front page on nav deploy

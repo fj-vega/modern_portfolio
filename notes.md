@@ -47,4 +47,20 @@ the following content:
 Now we run
     git init
 
+Create the repo, and make our first commit
+It's going to be a local project, it won't be pussed to gitHub
+
+// And that's it, environtment and prerequisites ready
+
+
+## Working with SASS
+
+*Insert some notes about variables and nesting*
+
+Working with partials:
+Just create a file inside the *scss* folder, here we created *_config.scss*
+Partial names start with an underscore '_' by convention.
+Then you include it in your main file:
+    @include 'config';
+
 

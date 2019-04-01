@@ -63,4 +63,12 @@ Partial names start with an underscore '_' by convention.
 Then you include it in your main file:
     @include 'config';
 
+## Highlights
 
+- Creating a hamburger button
+
+
+## Other notes
+
+If you happen to see any error that makes no actual sense under NPM watch,
+try restarting the service and save your files again

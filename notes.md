@@ -67,6 +67,17 @@ Creating functions and using them
 
 ## Deploying to GitHub Pages
 
+Used Node packages:
+  gh-pages
+
+We have to add this to our *package.json*
+
+  "main": "main.js",
+  "homepage": "https://fj-vega.github.io/modern_portfolio",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "deploy": "gh-pages -d dist" // deploy the selected directory
+  },
 
 
 ## Highlights

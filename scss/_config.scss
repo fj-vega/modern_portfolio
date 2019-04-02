@@ -34,6 +34,17 @@ $portrait-image-sm: url(../img/portrait_small.jpg);
   }
 }
 
+// Set text color
+// sets text color according to background color - readability
+
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
 // Media queries
 
 @mixin mediaSm {

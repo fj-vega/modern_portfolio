@@ -62,18 +62,23 @@ Just create a file inside the *scss* folder, here we created *_config.scss*
 Partial names start with an underscore '_' by convention.
 Then you include it in your main file:
     @include 'config';
+Creating functions and using them
 
 ## Highlights
 
 - Creating a hamburger button
 - Two sections of the navbar sliding in from top and bottom
   (Why use float on this though?)
+- Sticky footer using calc()
 
 
 ## Other notes
 
 If you happen to see any error that makes no actual sense under NPM watch,
 try restarting the service and save your files again
+
+To-do
+  Make size units uniform - use rem on everything text related
 
 Ideas
 - Blur background image of front page on nav deploy

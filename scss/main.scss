@@ -1,6 +1,5 @@
 @import 'config';
 @import 'menu';
-@import 'mobile';
 
 // General
 
@@ -12,7 +11,7 @@ body {
   @include background;
 
   background: $primary-color;
-  color: white;
+  color: set-text-color($primary-color);  // using functions in SASS
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -62,7 +61,8 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%;
+  // height: 100%;
+  min-height: calc(100vh - 60px); // viewport - footer size
 
   .icons { // will only affect class of 'icons' inside of main
     margin-top: 1rem;
@@ -85,3 +85,49 @@ main {
     }
   }
 }
+
+// About page
+
+.about-info {
+  display: grid;
+  grid-template-areas:
+    'bioimage bio  bio'
+    'job1     job2 job3';
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+
+  .bio-image { grid-area: bioimage; }
+  .bio       { grid-area: bio; }
+  .job-1     { grid-area: job1; }
+  .job-2     { grid-area: job2; }
+  .job-3     { grid-area: job3; }
+
+  .bio-image {
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+  }
+
+  .bio {
+    font-size: 1.5rem;
+    text-align: justify;
+  }
+
+  .job {
+    background-color: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+    text-align: justify;
+  }
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: darken($primary-color, 10);
+  color: set-text-color($primary-color);
+  height: 60px;
+}
+
+// We want media queries to run after our main CSS
+@import 'mobile';

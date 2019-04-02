@@ -64,6 +64,11 @@ Then you include it in your main file:
     @include 'config';
 Creating functions and using them
 
+
+## Deploying to GitHub Pages
+
+
+
 ## Highlights
 
 - Creating a hamburger button
